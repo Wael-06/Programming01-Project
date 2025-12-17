@@ -11,10 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Install GCC
-      run: sudo apt update && sudo apt install -y build-essential
+      - name: Install GCC
+        run: sudo apt update && sudo apt install -y build-essential
 
-    - name: Build
-      run: gcc login2.c -o login2
+      - name: List repo files
+        run: ls -R
+
+      - name: Build all C files
+        run: gcc *.c -o program
+
+      - name: Run program
+        run: ./program
+
