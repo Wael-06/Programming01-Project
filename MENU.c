@@ -3,10 +3,10 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
+#include "login.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "login.h"
 #define MAX_ACCOUNTS 1000
 void clear_input();//BUFFER 
 
@@ -60,3 +60,4 @@ void change_status();
 
 #endif
 #endif
+
