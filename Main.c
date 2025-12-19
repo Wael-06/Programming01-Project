@@ -21,9 +21,6 @@ int sizefile(char *fname)//byyoussef
     return size;
 }
 /*to get size of any file was planning in the login func. but didn't needed,but will useful as we go on*/
-int login();//byyoussef
-/*The login function have a sscanf which (Dr.Saleh) said it isn't safe I will fix it later ,but other than that it is work is as a newly lubricated motor */
-/*return 1 if successful,0 if failed,-1 if couldn't open the file*/
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------Eyad Requirements--------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -37,7 +34,10 @@ void modify_account();
 //--------------------------------------------------------------Youssef Requirements--------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //int login();//YOUSSEF WILL MAKE IT BETTER
-void search_account();
+/*The login function have a sscanf which (Dr.Saleh) said it isn't safe I will fix it later ,but other than that it is work is as a newly lubricated motor */
+/*return 1 if successful,0 if failed,-1 if couldn't open the file*/
+//void search_account();DONE
+/*it works*/
 void print_sorted();
 void daily_limit();
 //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,4 +60,5 @@ void change_status();
 
 #endif
 #endif
+
 
