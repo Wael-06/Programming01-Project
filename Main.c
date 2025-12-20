@@ -6,6 +6,7 @@
 #define SEARCH_H
 
 #include "login.h"
+#include "search.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -155,6 +156,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
