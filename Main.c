@@ -20,6 +20,80 @@ int sizefile(char *fname)//byyoussef
     fclose(fptr);
     return size;
 }
+
+void print(Account account)//byyoussef
+{
+    printf("Account Number:%10s\n", account.account_number);
+    printf("Name: %s\n", account.name);
+    printf("E-mail: %s\n", account.email);
+    printf("Balance: %.2f$\n", account.balance);
+    printf("Mobile: %s\n", account.mobile);
+    printf("Date Opened: ");
+    int m = account.date_of_openeing.month;
+    int y = account.date_of_openeing.year;
+    if (m > 0 && m < 13)
+    {
+    }
+    else if (m > 12)
+    {
+        while (m > 12)
+        {
+            m -= 12;
+            y++;
+        }
+    }
+    if (m <= 0)
+    {
+        printf("Invalid month");
+        exit(-1);
+    }
+    switch (m)
+    {
+    case 1:
+        printf("January");
+        break;
+    case 2:
+        printf("February");
+        break;
+    case 3:
+        printf("March");
+        break;
+    case 4:
+        printf("April");
+        break;
+    case 5:
+        printf("May");
+        break;
+    case 6:
+        printf("June");
+        break;
+    case 7:
+        printf("July");
+        break;
+    case 8:
+        printf("August");
+        break;
+    case 9:
+        printf("September");
+        break;
+    case 10:
+        printf("October");
+        break;
+    case 11:
+        printf("November");
+        break;
+    case 12:
+        printf("December");
+        break;
+    default:
+        break;
+    }
+    printf("%d\n", y);
+    if (strcmp(account.status, " active") == 0)
+        printf("Status: Active\n");
+    else
+        printf("Status: Inactive\n");
+}
 /*to get size of any file was planning in the login func. but didn't needed,but will useful as we go on*/
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------Eyad Requirements--------------------------------------------------------------------
@@ -60,5 +134,6 @@ void change_status();
 
 #endif
 #endif
+
 
 
