@@ -2,12 +2,32 @@
 #define BANK_SYSTEM_H
 #ifndef LOGIN_H
 #define LOGIN_H
+#ifndef SEARCH_H
+#define SEARCH_H
 
 #include "login.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #define MAX_ACCOUNTS 1000
+
+typedef struct
+{
+    int month;
+    int year;
+} Date;
+
+typedef struct
+{
+    char account_number[12];
+    char name[50];
+    char email[50];
+    float balance;
+    char mobile[15];
+    Date date_of_openeing;
+    char status[10];
+} Account;
+
 void clear_input();//BUFFER 
 
 int sizefile(char *fname)//byyoussef
@@ -134,6 +154,7 @@ void change_status();
 
 #endif
 #endif
+
 
 
 
