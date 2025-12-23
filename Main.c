@@ -153,7 +153,7 @@ void load_accounts() {
     int line_number = 0;
     int loaded_count = 0;
     
-    printf("📂 Loading accounts from 'accounts.txt'...\n");
+    printf("Loading accounts from 'accounts.txt'\n");
     
     while (fgets(line, sizeof(line), file) && account_count < MAX_ACCOUNTS) {
         line_number++;
@@ -181,7 +181,7 @@ void load_accounts() {
         
         // VALIDATION 1: Check account number is 10 digits
         if (strlen(acc_num) != 10) {
-            printf("⚠️  Warning: Account number '%s' must be 10 digits (line %d)\n", 
+            printf(" Warning: Account number '%s' must be 10 digits (line %d)\n", 
                    acc_num, line_number);
             continue;
         }
@@ -228,7 +228,7 @@ void load_accounts() {
         
         // VALIDATION 6: Check balance is non-negative
         if (balance < 0) {
-            printf("⚠️  Warning: Negative balance %.2f (line %d)\n", 
+            printf("Warning: Negative balance %.2f (line %d)\n", 
                    balance, line_number);
             continue;
         }
@@ -310,6 +310,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
