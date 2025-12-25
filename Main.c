@@ -26,7 +26,7 @@ typedef struct
     float balance;
     char mobile[15];
     Date date_of_openeing;
-    char status[10];
+    int status;
 } Account;
 
 void clear_input();//BUFFER 
@@ -110,7 +110,7 @@ void print(Account account)//byyoussef
         break;
     }
     printf("%d\n", y);
-    if (strcmp(account.status, " active") == 0)
+    if (account.status)
         printf("Status: Active\n");
     else
         printf("Status: Inactive\n");
@@ -310,6 +310,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
