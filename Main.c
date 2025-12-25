@@ -27,6 +27,7 @@ typedef struct
     char mobile[15];
     Date date_of_openeing;
     int status;
+    char status[10];
 } Account;
 
 void clear_input();//BUFFER 
@@ -310,6 +311,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
