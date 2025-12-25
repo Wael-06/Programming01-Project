@@ -43,7 +43,7 @@ int sizefile(char *fname)//byyoussef
     return size;
 }
 
-void print(Account account)//byyoussef
+void printwithlines(Account account)//byyoussef
 {
     printf("Account Number:%10s\n", account.account_number);
     printf("Name: %s\n", account.name);
@@ -311,6 +311,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
