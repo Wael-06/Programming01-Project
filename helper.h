@@ -12,5 +12,8 @@ int compare_by_date_oldest(const void *a, const void *b);//bymoataz
 int compare_by_date_newest(const void *a, const void *b);//bymoataz
 int compare_by_balance_asc(const void *a, const void *b);//bymoataz
 int compare_by_status_active_first(const void *a, const void *b);//bymoataz
+void print_account(const struct Account *account);//bymoataz
+void print_accounts(const struct Account *accounts, int accounts_number);//bymoataz
 #endif
+
 
