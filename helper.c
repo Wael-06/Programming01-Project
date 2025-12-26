@@ -140,8 +140,9 @@ void print_account(const struct Account *account)//bymoataz
 
 void print_accounts(const struct Account *accounts, int accounts_number)//bymoataz
 {
-    for (int i = 0; i < count; i++) {
+    for (int i = 0; i < accounts_number; i++) {
         print_account(&accounts[i]);
     }
 }
+
 
