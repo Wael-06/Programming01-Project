@@ -124,3 +124,24 @@ int compare_by_status_active_first(const void *a, const void *b)//bymoataz
     if (acc1->status < acc2->status) return 1;
     return 0;
 }
+
+void print_account(const struct Account *account)//bymoataz
+{
+    printf("%s,%s,%s,%.2f,%s,%02d-%04d,%s\n",
+           account->account_number,
+           account->name,
+           account->email,
+           account->balance,
+           account->mobile,
+           account->date_of_openeing.month,
+           account->date_of_openeing.year,
+           account->status ? "active" : "inactive");
+}
+
+void print_accounts(const struct Account *accounts, int accounts_number)//bymoataz
+{
+    for (int i = 0; i < count; i++) {
+        print_account(&accounts[i]);
+    }
+}
+
