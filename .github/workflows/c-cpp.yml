@@ -17,4 +17,4 @@ jobs:
       run: sudo apt update && sudo apt install -y build-essential
 
     - name: Build
-      run: gcc login2.c -o login2
+      run: gcc login.c -o login
