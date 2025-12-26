@@ -143,45 +143,7 @@ static int save_to_disk() {
     fclose(file);
     return 1;
 }
-// ====================================================================
-// MENU SAVE COMMAND (Option #12) FOR MENU ONLY - WITH VALIDATION
-// ====================================================================
-void save_accounts() {
-    printf("\nSAVE ACCOUNTS TO FILE\n");
-    
-    if (account_count == 0) {
-        printf("No accounts to save.\n");
-        return;
-    }
-    
-    printf("Save %d accounts to 'accounts.txt'?\n", account_count);
-    printf("This will overwrite the existing file. (y/n): ");
-    
-    char choice;
-    // Loop until valid input
-    while (1) {
-        scanf(" %c", &choice);
-        clear_input_buffer();
-        
-        // Check if input is valid
-        if (choice == 'y' || choice == 'Y' || choice == 'n' || choice == 'N') {
-            break;  // Valid input, exit loop
-        } else {
-            printf("Invalid input! Please enter 'y' or 'n': ");
-        }
-    }
-    
-    if (choice != 'y' && choice != 'Y') {
-        printf("Save cancelled.\n");
-        return;
-    }
-    
-    if (save_to_disk()) {
-        printf("SUCCESS: Saved %d accounts to file.\n", account_count);
-    } else {
-        printf("ERROR: Save failed!\n");
-    }
-}
+
 
 // ==============================================================
 // AUTO-SAVE PROMPT - WITH VALIDATION USE THSI IN MODIFICATIONSSSSSS AUTO SAVE
@@ -404,6 +366,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
