@@ -78,3 +78,49 @@ void destroy_account(struct Account *account)//bymoataz
         free(account);
     }
 }
+
+int compare_by_name(const void *a, const void *b)//bymoataz
+{
+    const struct Account *acc1 = (const struct Account *)a;
+    const struct Account *acc2 = (const struct Account *)b;
+
+    return strcmp(acc1->name, acc2->name);
+}
+
+int compare_by_date_oldest(const void *a, const void *b)//bymoataz
+{
+    const struct Account *acc1 = (const struct Account *)a;
+    const struct Account *acc2 = (const struct Account *)b;
+    if (acc1->date_of_openeing.year != acc2->date_of_openeing.year) {
+        return acc1->date_of_openeing.year - acc2->date_of_openeing.year;
+    }
+    return acc1->date_of_openeing.month - acc2->date_of_openeing.month;
+}
+
+int compare_by_date_newest(const void *a, const void *b)//bymoataz
+{
+    const struct Account *acc1 = (const struct Account *)a;
+    const struct Account *acc2 = (const struct Account *)b;
+    if (acc1->date_of_openeing.year != acc2->date_of_openeing.year) {
+        return acc2->date_of_openeing.year - acc1->date_of_openeing.year;
+    }
+    return acc2->date_of_openeing.month - acc1->date_of_openeing.month;
+}
+
+int compare_by_balance_asc(const void *a, const void *b)//bymoataz
+{
+    const struct Account *acc1 = (const struct Account *)a;
+    const struct Account *acc2 = (const struct Account *)b;
+    if (acc1->balance < acc2->balance) return -1;
+    if (acc1->balance > acc2->balance) return 1;
+    return 0;
+}
+
+int compare_by_status_active_first(const void *a, const void *b)//bymoataz
+{
+    const struct Account *acc1 = (const struct Account *)a;
+    const struct Account *acc2 = (const struct Account *)b;
+    if (acc1->status > acc2->status) return -1;
+    if (acc1->status < acc2->status) return 1;
+    return 0;
+}
