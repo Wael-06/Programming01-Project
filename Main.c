@@ -32,15 +32,19 @@ typedef struct
 
 void clear_input();//BUFFER 
 
-int sizefile(char *fname)//byyoussef
+int count_accounts(const char *filename)//byyoussef
 {
-    FILE *fptr = fopen(fname, "rb");
-    if (fptr == NULL)
-        return -1;
-    fseek(fptr, 0, SEEK_END);
-    int size = ftell(fptr);
-    fclose(fptr);
-    return size;
+    FILE *fp = fopen(filename, "r");
+    if (!fp) return -1;
+
+    int count = 0;
+    char buffer[200];
+
+    while (fgets(buffer, sizeof(buffer), fp))
+        count++;
+
+    fclose(fp);
+    return count;
 }
 
 void printwithlines(Account account)//byyoussef
@@ -366,6 +370,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
