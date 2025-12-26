@@ -121,9 +121,102 @@ void printwithlines(Account account)//byyoussef
 //-----------------------------------------------------------------Eyad Requirements--------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-//void show_login_menu();
-//void show_main_menu();
-void save_accounts(); 
+void show_login_menu();
+void show_main_menu();
+//static to be private bas
+static int save_to_disk() {
+    FILE *file = fopen("accounts.txt", "w");
+    if (file == NULL) return 0;
+    
+    for (int i = 0; i < account_count; i++) {
+        fprintf(file, "%s,%s,%s,%.2f,%s,%02d-%d,%s\n",
+                accounts[i].account_number,
+                accounts[i].name,
+                accounts[i].email,
+                accounts[i].balance,
+                accounts[i].mobile,
+                accounts[i].date_opened.month,
+                accounts[i].date_opened.year,
+                accounts[i].status);
+    }
+    
+    fclose(file);
+    return 1;
+}
+// ====================================================================
+// MENU SAVE COMMAND (Option #12) FOR MENU ONLY - WITH VALIDATION
+// ====================================================================
+void save_accounts() {
+    printf("\nSAVE ACCOUNTS TO FILE\n");
+    
+    if (account_count == 0) {
+        printf("No accounts to save.\n");
+        return;
+    }
+    
+    printf("Save %d accounts to 'accounts.txt'?\n", account_count);
+    printf("This will overwrite the existing file. (y/n): ");
+    
+    char choice;
+    // Loop until valid input
+    while (1) {
+        scanf(" %c", &choice);
+        clear_input_buffer();
+        
+        // Check if input is valid
+        if (choice == 'y' || choice == 'Y' || choice == 'n' || choice == 'N') {
+            break;  // Valid input, exit loop
+        } else {
+            printf("Invalid input! Please enter 'y' or 'n': ");
+        }
+    }
+    
+    if (choice != 'y' && choice != 'Y') {
+        printf("Save cancelled.\n");
+        return;
+    }
+    
+    if (save_to_disk()) {
+        printf("SUCCESS: Saved %d accounts to file.\n", account_count);
+    } else {
+        printf("ERROR: Save failed!\n");
+    }
+}
+
+// ==============================================================
+// AUTO-SAVE PROMPT - WITH VALIDATION USE THSI IN MODIFICATIONSSSSSS AUTO SAVE
+// ==============================================================
+void quick_save_prompt() {
+    printf("\nSave changes to file? (y/n): ");
+    
+    char choice;
+    // Loop until valid input
+    while (1) {
+        scanf(" %c", &choice);
+        clear_input_buffer();
+        
+        // Check if input is valid
+        if (choice == 'y' || choice == 'Y' || choice == 'n' || choice == 'N') {
+            break;  // Valid input, exit loop
+        } else {
+            printf("Invalid input! Please enter 'y' or 'n': ");
+        }
+    }
+    
+    if (choice == 'y' || choice == 'Y') {
+        if (save_to_disk()) {
+            printf("SUCCESS: Changes saved.\n");
+        } else {
+            printf("ERROR: Save failed!\n");
+        }
+    } else {
+        printf("NOTE: Changes not saved.\n");
+    }
+}
+
+
+//////////////////DONE//////////////////////
+
 void clear_input_buffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
@@ -311,6 +404,7 @@ void change_status();
 #endif
 #endif
 #endif
+
 
 
 
