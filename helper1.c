@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include <ctype.h>
 #define MAX_ACCOUNTS 1000
 
@@ -238,4 +239,20 @@ int count_valid_accounts()//byeyad
 
         return account_count;
 
+}
+
+int compare(float a, float b) {
+    if (fabsf(a - b) < 0.00001f) return 0;
+    if (a > b) return 1;
+    return -1;
+}
+
+int confirm() {
+    char answer;
+    do{
+    printf("Confirm? (y/n): ");
+    scanf(" %c", &answer);
+    }while(answer != 'y' && answer != 'Y'&& answer !='n' && answer !='N');
+
+    return (answer == 'y' || answer == 'Y');
 }
