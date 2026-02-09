@@ -24,3 +24,6 @@ jobs:
 
       - name: Run program
         run: ./program
+
+      - name: Run program
+        run: ./program
