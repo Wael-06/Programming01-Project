@@ -1,0 +1,27 @@
+name: C Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install GCC
+        run: sudo apt update && sudo apt install -y build-essential
+
+      - name: List repo files
+        run: ls -R
+
+      - name: Build all C files
+        run: gcc *.c -o program
+
+      - name: Run program
+        run: ./program
+
