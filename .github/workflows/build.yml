@@ -20,7 +20,7 @@ jobs:
         run: ls -R
 
       - name: Build all C files
-        run: gcc src/*.c -o program
+        run: gcc -I src src/*.c -o program
 
       - name: Run program
         run: ./program
