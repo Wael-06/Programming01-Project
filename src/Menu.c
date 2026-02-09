@@ -1,7 +1,7 @@
 #include "Menu.h"
 #include "helper1.h"
 #include "helper2.h"
-#include "Add.h"
+#include "add.h"
 #include "Delete.h"
 #include "DeleteMultiple.h"
 #include "Modify.h"
