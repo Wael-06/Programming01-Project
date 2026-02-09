@@ -22,7 +22,7 @@ The system is built on a modular architecture using **C** for low-level memory m
 
 **Steps:**  
 1. Navigate to the project directory.  
-2. Build the project by running `make`. This compiles all source files within `src/` and generates the executable.  
+2. Build the project by running `make`. This compiles all source files within `src/` and generates the executable.
 3. Run the program with `./bank_system`.  
 4. To remove object files and reset the build environment, run `make clean`.
 
@@ -40,8 +40,6 @@ The development of this system was a collaborative effort by:
 * Youssef Wael - [@Wael-06](https://github.com/Wael-06)  
 * Moataz Ahmed - [@Wizza1911](https://github.com/Wizza1911)  
 * Eyad Tamer - [@EyadDodo](https://github.com/EyadDodo)  
-* Abdalrahamn Khaled - [@abdelrhman-khaled13](https://github.com/abdelrhman-khaled13)  
-
-Note: This project is designed for Linux and MinGW environments. The Makefile handles header dependencies automatically, ensuring only modified files are recompiled.
+* Abdalrahamn Khaled - [@abdelrhman-khaled13](https://github.com/abdelrhman-khaled13)
 
 **Note:** This project is designed for Linux and MinGW environments. The Makefile handles header dependencies automatically, ensuring only modified files are recompiled.
